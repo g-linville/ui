@@ -12,7 +12,8 @@ interface ThreadsProps {
 const Threads: React.FC<ThreadsProps> = ({className}) => {
     const {
         setScript,
-        setThread, 
+        setScriptContent,
+        setThread,
         threads,
         setScriptId,
         selectedThreadId,
@@ -22,6 +23,7 @@ const Threads: React.FC<ThreadsProps> = ({className}) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const handleRun = async (script: string, id: string, scriptId: string) => {
+        setScriptContent(null);
         setScript(script);
         setThread(id);
         setScriptId(scriptId);
